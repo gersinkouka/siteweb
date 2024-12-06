@@ -1,0 +1,163 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.8;
+    background: linear-gradient(to bottom right, #004080, #00aaff);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2020/01/08/20/02/particles-4752914_960_720.png') repeat;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #ffcc00;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h2 {
+    color: #ff9900;
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+    animation: slideIn 1s ease-in-out;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ffcc00;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 1.5s ease-in-out;
+}
+
+section, p, ul, ol {
+    width: 70%;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+section:hover, p:hover, ul:hover, ol:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.contact {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.contact a {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.5s ease, transform 0.3s ease;
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #ff9900, #ff6600);
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact a:hover {
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.7);
+}
+
+ul, ol {
+    padding-left: 40px;
+}
+
+li {
+    margin: 10px 0;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+li::before {
+    content: '•';
+    color: #ff6600;
+    font-size: 1.5em;
+    position: absolute;
+    left: -30px;
+    top: -5px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+li:hover {
+    transform: translateX(10px);
+    color: #ff6600;
+    text-shadow: 0 0 5px rgba(255, 102, 0, 0.8);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    section, p, ul, ol {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+}
